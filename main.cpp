@@ -82,4 +82,40 @@ int main(int argc, char* argv[])
     {
       cout << vs[i] << endl; 
     }
+
+  //STL iterator
+  cout << "\nSTL iterator" << endl;
+  vector<int> vint(10); //vector with 10 integers
+  vint[0] = 10;
+  vint[1] = 20;
+  vint[2] = 30;
+  vint[3] = 40;
+  vint[4] = 50;
+  vint[5] = 60;
+  vint[6] = 70;
+  vint[7] = 80;
+  vint[8] = 90;
+  vint[9] = 100;
+
+  //diplaying the elements of the vector
+  vector<int>::iterator it; 
+  for (it = vint.begin(); it != vint.end(); ++it)
+  {
+    cout << " " << *it << endl;
+  }
+
+  //std::stack
+  stack<int> st;
+
+  st.push(100);             //Pushes the number on the stack
+  assert(st.size() == 1);   //Verifies that one element is on the stack
+  assert(st.top() == 100);  //Verifies the element value
+  
+  st.top() = 500;           //Assigs a new value
+  assert(st.top() == 500);
+
+  st.pop();                 //Revomes the element
+  assert(st.empty() == true); 
+
+
 }

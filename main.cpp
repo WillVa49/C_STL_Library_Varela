@@ -11,6 +11,8 @@ Dr_T Unit 2 COSC-1437
 #include<utility>
 #include<map>  
 using namespace std;
+typedef map<string, int>MapT;
+typedef MapT::const_iterator MapIterT;
 
 class MyClassVector1
 {
@@ -148,5 +150,33 @@ int main(int argc, char* argv[])
   pair<string, int> strint("two", 2);
   assert(strint.first == "two");
   assert(strint.second == 2);
+
+  //Map insert
+  MapT amap;
+  pair<MapIterT, bool> result = amap.insert(make_pair("Fred", 45));
+  assert(result.second == true);
+  assert(result.first -> second == 45);
+  result = amap.insert(make_pair("Fred", 54));
+
+  assert(result.second == false);
+  assert(result.first -> second == 45);
+  cout << endl;
+  //Map Summary
+  cout << "\nMap Summary" << endl;
+  map<string,string> phone_book;
+  phone_book["411"] = "Directory";
+  phone_book["911"] = "Emergency";
+  phone_book["508-678-2811"] = "BBC";
+  if (phone_book.find("411") != phone_book.end())
+  {
+    phone_book.insert(make_pair(string("411"), string("Directory")));
+  }
+  assert(phone_book.size() == 3);
+  map<string, string>::const_iterator t;
+  for(t = phone_book.begin(); t != phone_book.end(); ++t)
+  {
+    cout << " " << t -> first << " " << t -> second << endl;
+  }
+
 
 }

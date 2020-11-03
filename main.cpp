@@ -178,5 +178,21 @@ int main(int argc, char* argv[])
     cout << " " << t -> first << " " << t -> second << endl;
   }
 
+  //Sort algorithm
+  int arr[100];
+  sort(arr, arr + 100);
+  vector <int> v1;
+  sort (v1.begin(), v1.end());
 
+  
+  return 0;
 }
+
+//Predicate algorithm
+bool less_than_7(int value)
+
+  {
+    return value < 7;
+  }
+  vector <int> v2;
+  int count_less = std::count_if(v2.begin(), v2.end(), less_than_7);

@@ -117,5 +117,36 @@ int main(int argc, char* argv[])
   st.pop();                 //Revomes the element
   assert(st.empty() == true); 
 
+  //std::set
+  cout << "\nSTL Set" << endl;
+  set<int> iset;     //Set of unique integers
+  iset.insert(11);  //Populating set with values
+  iset.insert(-11);
+  iset.insert(55);
+  iset.insert(22);
+  iset.insert(22);
+  if (iset.find(55) != iset.end())
+  {
+    iset.insert(55);
+  }
+  assert(iset.size() == 4);
+  set<int>::iterator i;
+  for (i = iset.begin(); i != iset.end(); i++)
+  {
+    cout << " " << *i;
+  }
+  
+  //Pair structure
+  pair<string, string> strstr;  
+  strstr.first = "Hello";
+  strstr.second = "World";
+
+  pair<int, string> intstr;
+  intstr.first = 1;
+  intstr.second = "one";
+
+  pair<string, int> strint("two", 2);
+  assert(strint.first == "two");
+  assert(strint.second == 2);
 
 }
